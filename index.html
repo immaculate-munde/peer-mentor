@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peer Mentorship Advice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>👋 Hello! What advice do you need today?</h1>
+    
+    <input
+      type="text"
+      id="categoryInput"
+      placeholder="e.g. relationships, career, spirituality..."
+    />
+    
+    <button onclick="generateAdvice()">Get Advice</button>
+
+    <div id="advice-box" class="advice-box">
+      Waiting for your topic... 😊
+    </div>
+
+    <button id="themeToggle" class="theme-toggle">🌓</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
