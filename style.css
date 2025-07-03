@@ -1,0 +1,115 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #006d77, #83c5be, #3a86ff);
+  --text-color: #f0f8ff;
+  --box-bg: rgba(0, 77, 77, 0.2);
+  --button-bg: #00b4d8;
+  --button-hover: #0077b6;
+}
+
+body.light {
+  --bg-gradient: linear-gradient(135deg, #caf0f8, #ade8f4, #90e0ef);
+  --text-color: #003344;
+  --box-bg: rgba(255, 255, 255, 0.6);
+  --button-bg: #0077b6;
+  --button-hover: #005f8d;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+  transition: all 0.5s ease;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background-color: var(--box-bg);
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  margin: 15px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  background: none;
+  color: var(--text-color);
+}
+
+.advice-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  min-height: 120px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+.advice-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.advice-box em {
+  display: inline-block;
+  animation: emojiPop 1s ease infinite alternate;
+}
+
+@keyframes emojiPop {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
